@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create
-    @user = User.new(params[:user])
+    @user = User.new(name: "Foo Bar", email: "foo@invalid",
+                 password: "foo", password_confirmation: "bar")
     if @user.save
       redirect_to @user
       # Handle a successful save.
